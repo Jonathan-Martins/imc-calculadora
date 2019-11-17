@@ -1,9 +1,11 @@
 .container {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color:#da552f;
+    border-radius: 5px;
     height: 50vh;
     width: 80vh;
     margin: 0 auto;
@@ -22,11 +24,17 @@
 
 .dados input {
     width: 100%;
+    border-radius: 5px;
 }
 
 .dados button {
+    border-radius: 5px;
     padding: 7px;
     margin-top: 5px;
+}
+
+.dados button:hover {
+    background-color: aquamarine;
 }
 
 .resultado {
