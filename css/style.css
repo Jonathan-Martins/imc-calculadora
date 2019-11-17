@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#da552f;
+    height: 50vh;
+    width: 80vh;
+    margin: 0 auto;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados label {
+    margin: 5px 0;
+}
+
+.dados input {
+    width: 100%;
+}
+
+.dados button {
+    padding: 7px;
+    margin-top: 5px;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
