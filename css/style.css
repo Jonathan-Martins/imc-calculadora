@@ -16,10 +16,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
+    
 }
 
 .dados label {
     margin: 5px 0;
+    font-weight: bold;
+    padding-right: 350px;
 }
 
 .dados input {
@@ -35,6 +39,7 @@
 
 .dados button:hover {
     background-color: aquamarine;
+    cursor: pointer;
 }
 
 .resultado {
