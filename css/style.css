@@ -31,6 +31,10 @@
     border-radius: 5px;
 }
 
+.dados input::placeholder {
+    padding: 5px;
+}
+
 .dados button {
     border-radius: 5px;
     padding: 7px;
