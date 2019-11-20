@@ -4,14 +4,36 @@ const btnCalcular = document.querySelector(".container section button")
 const outputResp = document.querySelector(".container section.resultado output")
 
 function calcularIMC(peso, altura) {
-    let imc =  peso / (altura * altura)
-    return imc
+    try {
+        if (!peso && !altura) {
+            return alert("Por favor, preencha todos os campos")
+        }
+        
+        if (!peso) {
+            return alert("Por favor, preencha o campo peso")
+        }
+
+        if (!altura) {
+            return alert("Por favor, preencha o campo altura")
+        }        
+
+        let imc =  peso / (altura * altura)
+        return imc
+    } catch (err) {
+        alert("Por favor, informe valores válidos")
+    }
+    
 }
 
 btnCalcular.addEventListener("click", () => {
     let peso = Number(inputPeso.value);
     let altura = Number(inputAltura.value);
     let imc = calcularIMC(peso, altura)
+    
+    if (!imc) {
+        return 
+    }
+
     if (imc <= 17) {
         outputResp.innerHTML = ` ${imc.toFixed(2)}. Muito baixo do peso.`
     } else if (imc > 17 && imc < 18.49) {
