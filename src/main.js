@@ -45,7 +45,7 @@ function main() {
         p.classList.add('resp')
         outputElement.appendChild(p)
     }
-    
+
     formElement.addEventListener('submit', (e) => {
         e.preventDefault()
         const inputPeso = formElement.querySelector('input.peso')
