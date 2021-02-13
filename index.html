@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/presentation.css" />
+    <link rel="stylesheet" href="./css/card.css" />
+    <link rel="stylesheet" href="./css/result.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <title>IMCalc</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">IMCalc</h1>
+    </header>
+
+    <main class="container">
+      <section class="presentation">
+        <div class="presentation__box">
+          <h2 class="presentation__title">O que é a IMCalc?</h2>
+          <p class="presentation__paragraph">
+            IMCalc é uma calculadora de IMC desenvolvida para prática de HTML,
+            CSS e javascript.
+          </p>
+        </div>
+
+        <div class="presentation__box">
+          <h2 class="presentation__title">O que é IMC?</h2>
+          <p class="presentation__paragraph">
+            IMC significa "Índice de Massa Corporal" e é um calculo para avaliar
+            se um indivíduo está dentro do peso ideal em relação à sua altura.
+          </p>
+        </div>
+
+        <div class="presentation__box">
+          <h2 class="presentation__title">Como o IMC é calculado?</h2>
+          <p class="presentation__paragraph">
+            Para calcular o IMC é muito simples, basta usar a seguinte fórmula:
+            peso÷(altura * altura).
+          </p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3 class="card__title">Calculadora</h3>
+        <div class="card__input-group">
+          <label for="peso" class="sr-only">Peso </label>
+          <input
+            type="number"
+            name="peso"
+            id="peso"
+            placeholder="Peso:kg"
+            required
+            data-peso
+          />
+        </div>
+
+        <div class="card__input-group">
+          <label for="altura" class="sr-only">Altura </label>
+          <input
+            type="number"
+            name="altura"
+            id="altura"
+            placeholder="Altura:m"
+            required
+            data-altura
+          />
+        </div>
+        <button class="card__calcular" type="submit">Calcular</button>
+      </section>
+
+      <section class="result">
+        <h3 class="result__title">Resultado</h3>
+        <label for="resp" class="sr-only">IMC: </label>
+        <div class="result__container">
+          <input type="text" class="result__output" readonly data-output />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Desenvolvido por Jonathan Martins</p>
+    </footer>
+    <script src="../src/imc.js"></script>
+  </body>
+</html>

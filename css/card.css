@@ -1,0 +1,53 @@
+.card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  width: 100%;
+}
+
+.card__title {
+  color: var(--dark-blue);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card__input-group {
+  align-items: center;
+  background: #d9d9d9;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  width: 80%;
+}
+
+.card__input-group:nth-child(2) {
+  margin-bottom: 1.2rem;
+}
+
+.card__input-group input {
+  border: none;
+  border-radius: 0.25rem;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+.card__calcular {
+  background: var(--light-green);
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.9rem;
+  padding: 0.8rem;
+  width: 80%;
+}

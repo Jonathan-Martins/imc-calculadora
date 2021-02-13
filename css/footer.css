@@ -1,0 +1,9 @@
+.footer {
+  background: var(--light-green);
+  padding: 1rem;
+}
+
+.footer p {
+  color: #fff;
+  font-size: 1.2rem;
+}

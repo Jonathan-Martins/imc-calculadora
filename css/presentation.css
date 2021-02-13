@@ -1,0 +1,19 @@
+.presentation {
+  background: var(--dark-blue);
+  padding: 1rem;
+  width: 100%;
+}
+
+.presentation__title {
+  color: var(--light-green);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.presentation__paragraph {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 1rem;
+  text-align: justify;
+}

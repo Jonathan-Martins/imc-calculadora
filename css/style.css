@@ -1,60 +1,36 @@
+:root {
+  --dark-blue: #363f5f;
+  --green: #49aa26;
+  --light-green: #3dd705;
+  --red: #e92929;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f0f2f5;
+  /* height: 100vh; */
+}
+
 .container {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color:#da552f;
-    border-radius: 5px;
-    height: 50vh;
-    width: 80vh;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 50vh; */
 }
 
-.dados {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
-
-.dados label {
-    margin: 5px 0;
-    font-weight: bold;
-    padding-right: 350px;
-}
-
-.dados input {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.dados input::placeholder {
-    padding: 5px;
-}
-
-.dados button {
-    border-radius: 5px;
-    padding: 7px;
-    margin-top: 5px;
-}
-
-.dados button:hover {
-    background-color: aquamarine;
-    cursor: pointer;
-}
-
-.resultado {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    border: 1px solid #666;
-    border-radius: 5px;
-    width: 45%;
-    height: 20%;
-}
-
