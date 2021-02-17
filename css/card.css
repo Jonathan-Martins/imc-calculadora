@@ -30,7 +30,9 @@
 
 .card__input-group input {
   border: none;
-  border-radius: 0.25rem;
+  border-bottom: 1px solid var(--green);
+  background: #d9d9d9;
+  color: var(--green);
   display: block;
   font-size: 1.2rem;
   font-weight: 500;
@@ -38,6 +40,12 @@
   margin-bottom: 0.5rem;
   padding: 0.6rem;
   width: 100%;
+}
+
+.card__input-group input::placeholder {
+  color: var(--green);
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .card__input-group input:focus {
