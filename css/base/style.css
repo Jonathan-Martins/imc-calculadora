@@ -1,9 +1,5 @@
-:root {
-  --dark-blue: #363f5f;
-  --green: #49aa26;
-  --light-green: #3dd705;
-  --red: #e92929;
-}
+@import url(_reset.css);
+@import url(_variaveis.css);
 
 * {
   box-sizing: border-box;

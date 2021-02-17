@@ -40,6 +40,10 @@
   width: 100%;
 }
 
+.card__input-group input:focus {
+  outline: none;
+}
+
 .card__calcular {
   background: var(--light-green);
   border: none;
