@@ -8,15 +8,11 @@
 body {
   font-family: "Roboto", sans-serif;
   background: #f0f2f5;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  /* height: 50vh; */
+  margin: 0 auto;
 }
 
 .sr-only {

@@ -14,6 +14,13 @@
   margin-bottom: 1rem;
 }
 
+.card__inputs {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .card__input-group {
   align-items: center;
   background: #d9d9d9;
@@ -49,7 +56,7 @@
 }
 
 .card__input-group input:focus {
-  outline: none;
+  outline: double var(--light-green);
 }
 
 .card__calcular {
@@ -62,4 +69,25 @@
   margin-top: 0.9rem;
   padding: 0.8rem;
   width: 80%;
+}
+
+@media (min-width: 720px) {
+  .card__input-group {
+    width: 35%;
+  }
+
+  .card__input-group input {
+    width: 50%;
+    text-align: center;
+  }
+
+  .card__calcular {
+    width: 30%;
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  .card__calcular:hover {
+    filter: brightness(0.9);
+  }
 }

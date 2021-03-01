@@ -22,13 +22,19 @@
   background-color: #cac7c7;
   border: none;
   border-bottom: 1px solid var(--green);
-  /* border-radius: 0.25rem; */
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.8rem;
+  text-align: center;
   width: 100%;
 }
 
 .result__output:focus {
-  outline: none;
+  outline: double var(--light-green);
+}
+
+@media (min-width: 720px) {
+  .result__output {
+    width: 30%;
+  }
 }

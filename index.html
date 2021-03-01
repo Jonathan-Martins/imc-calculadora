@@ -19,7 +19,9 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">IMCalc</h1>
+      <div class="header__banner">
+        <h1 class="header__title">IMCalc</h1>
+      </div>
     </header>
 
     <main class="container">
@@ -51,6 +53,7 @@
 
       <section class="card">
         <h3 class="card__title">Calculadora</h3>
+
         <div class="card__input-group">
           <label for="peso" class="sr-only">Peso </label>
           <input
@@ -74,6 +77,7 @@
             data-altura
           />
         </div>
+
         <button class="card__calcular" type="submit">Calcular</button>
       </section>
 
@@ -81,13 +85,42 @@
         <h3 class="result__title">Resultado</h3>
         <label for="resp" class="sr-only">IMC: </label>
         <div class="result__container">
-          <input type="text" class="result__output" readonly data-output />
+          <input
+            type="text"
+            class="result__output"
+            readonly
+            data-output
+            value="50"
+          />
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <p>Desenvolvido por Jonathan Martins</p>
+      <ul class="icons__list">
+        <li class="icons__list-item">
+          <a href="https://github.com/jonsmartins52" target="_blank">
+            <img
+              class="icons-list__img"
+              src="./assets/img/iconfinder_Github_social_media_logo_1964417.png"
+              alt="Github"
+            />
+          </a>
+        </li>
+        <li class="icons__list-item">
+          <a
+            href="https://www.linkedin.com/in/jonathansantosmartins/"
+            target="_blank"
+          >
+            <img
+              class="icons-list__img"
+              src="./assets/img/iconfinder_LinkedIn_367594.png"
+              alt="LinkedIn"
+            />
+          </a>
+        </li>
+      </ul>
     </footer>
     <script src="../src/imc.js"></script>
   </body>

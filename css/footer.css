@@ -6,4 +6,43 @@
 .footer p {
   color: #fff;
   font-size: 1.2rem;
+  text-align: center;
+}
+
+.icons__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.icons__list-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-list__img {
+  width: 30%;
+}
+
+@media (min-width: 720px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .icons__list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+    width: 20%;
+  }
+
+  .icons-list__img {
+    width: 30%;
+  }
 }
