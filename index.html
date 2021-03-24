@@ -62,7 +62,8 @@
             id="peso"
             placeholder="Peso:kg"
             required
-            data-peso
+            class="card__input"
+            data-tipo="peso"
           />
         </div>
 
@@ -74,11 +75,14 @@
             id="altura"
             placeholder="Altura:m"
             required
-            data-altura
+            class="card__input"
+            data-tipo="altura"
           />
         </div>
 
-        <button class="card__calcular" type="submit">Calcular</button>
+        <button class="card__calcular" data-tipo="botao" type="submit">
+          Calcular
+        </button>
       </section>
 
       <section class="result">
@@ -89,8 +93,7 @@
             type="text"
             class="result__output"
             readonly
-            data-output
-            value="50"
+            data-tipo="resultado"
           />
         </div>
       </section>
@@ -122,6 +125,6 @@
         </li>
       </ul>
     </footer>
-    <script src="../src/imc.js"></script>
+    <script type="module" src="../src/app.js"></script>
   </body>
 </html>
