@@ -60,6 +60,72 @@
   margin-top: 1.2rem;
 }
 
+.result__reset-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.9rem 0;
+}
+
+.result__reset {
+  background-color: #4e5e97;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  visibility: hidden;
+}
+
+@keyframes button-appear {
+  /* to {
+    opacity: 1;
+  } */
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes button-desappear {
+  /* to {
+    opacity: 0;
+  } */
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.result__reset--disabled {
+  background: #b3b3ff;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  opacity: 0;
+  animation: button-appear 2s ease-in-out forwards;
+}
+
+.result__source {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  word-spacing: 0.3rem;
+}
+
+.result__source a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (min-width: 720px) {
   .result__output {
     width: 30%;
@@ -79,5 +145,24 @@
 
   .result__message--obesity {
     font-size: 0.9rem;
+  }
+
+  .result__source {
+    font-size: 0.8rem;
+  }
+
+  .result__reset {
+    width: 15%;
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  .result__reset--disabled {
+    width: 15%;
+    color: #d9d9d9;
+  }
+
+  .result__reset:hover {
+    filter: brightness(0.9);
   }
 }

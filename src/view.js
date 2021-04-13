@@ -2,8 +2,10 @@ class View {
   constructor() {
     this.inputPeso = document.querySelector("[data-tipo='peso']");
     this.inputAltura = document.querySelector("[data-tipo='altura']");
-    this.btnCalcular = document.querySelector("[data-tipo='botao']");
+    this.btnCalcular = document.querySelector("[data-tipo='botao-calcular']");
+    this.btnReset = document.querySelector("[data-tipo='botao-reset']");
     this.outputResp = document.querySelector("[data-tipo='resultado']");
+    this.outputSpan = document.createElement("span");
   }
 
   getPeso() {
@@ -12,7 +14,6 @@ class View {
     if (!peso) {
       this.inputPeso.classList.remove("card__input");
       this.inputPeso.classList.add("card__input--invalido");
-      throw new Error("Valor não informado.");
     }
 
     return Number(peso);
@@ -24,49 +25,75 @@ class View {
     if (!altura) {
       this.inputAltura.classList.remove("card__input");
       this.inputAltura.classList.add("card__input--invalido");
-      throw new Error("Valor não informado.");
     }
 
     return Number(altura);
   }
 
-  renderResult(imc) {
-    this.classifyResult(imc);
+  clearInputs() {
     this.inputAltura.value = "";
     this.inputPeso.value = "";
+  }
+
+  renderResult(imc) {
+    this.classifyResult(imc);
+    this.clearInputs();
     this.outputResp.value = imc;
+    this.ableButton();
+    this.switchClasses();
+  }
+
+  disableButton() {
+    this.btnReset.setAttribute("disabled", "disabled");
+    this.btnReset.style.animation = "button-desappear 1s ease-in-out forwards";
+  }
+
+  ableButton() {
+    this.btnReset.removeAttribute("disabled");
+    this.btnReset.style.animation = "button-appear 1s linear forwards 2s";
   }
 
   classifyResult(imc) {
-    const span = document.createElement("span");
-
     if (imc < 18.5) {
-      span.classList.add("result__message--underweight");
-      span.innerHTML = "Abaixo do peso.";
-      this.outputResp.parentElement.appendChild(span);
+      this.outputSpan.classList.add("result__message--underweight");
+      this.outputSpan.innerHTML = "Abaixo do peso.";
+      this.outputResp.parentElement.appendChild(this.outputSpan);
       return;
     }
 
     if (imc < 25) {
-      span.classList.add("result__message--normal");
-      span.innerHTML = "Peso normal";
-      this.outputResp.parentElement.appendChild(span);
+      this.outputSpan.classList.add("result__message--normal");
+      this.outputSpan.innerHTML = "Peso normal";
+      this.outputResp.parentElement.appendChild(this.outputSpan);
       return;
     }
 
     if (imc < 30) {
-      span.classList.add("result__message--overweight");
-      span.innerHTML = "Acima do peso.";
-      this.outputResp.parentElement.appendChild(span);
+      this.outputSpan.classList.add("result__message--overweight");
+      this.outputSpan.innerHTML = "Acima do peso.";
+      this.outputResp.parentElement.appendChild(this.outputSpan);
       return;
     }
 
     if (imc >= 30) {
-      span.classList.add("result__message--obesity");
-      span.innerHTML = "Obesidade.";
-      this.outputResp.parentElement.appendChild(span);
+      this.outputSpan.classList.add("result__message--obesity");
+      this.outputSpan.innerHTML = "Obesidade.";
+      this.outputResp.parentElement.appendChild(this.outputSpan);
       return;
     }
+  }
+
+  clearResult() {
+    this.outputResp.value = "";
+    this.outputSpan.innerHTML = "";
+    this.disableButton();
+  }
+
+  switchClasses() {
+    this.inputAltura.classList.remove("card__input--invalido");
+    this.inputAltura.classList.add("card__input");
+    this.inputPeso.classList.remove("card__input--invalido");
+    this.inputPeso.classList.add("card__input");
   }
 
   onCalcClick(command) {
@@ -78,8 +105,16 @@ class View {
   configureCalcButton(command) {
     this.btnCalcular.addEventListener("click", this.onCalcClick(command));
   }
+
+  onResetClick(command) {
+    return () => {
+      command();
+    };
+  }
+
+  configureResetButton(command) {
+    this.btnReset.addEventListener("click", this.onResetClick(command));
+  }
 }
 
 export default View;
-
-/*fonte: http://tabnet.datasus.gov.br/cgi-win/SISVAN/CNV/notas_sisvan.html*/

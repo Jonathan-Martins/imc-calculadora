@@ -55,32 +55,34 @@
         <h3 class="card__title">Calculadora</h3>
 
         <div class="card__input-group">
-          <label for="peso" class="sr-only">Peso </label>
+          <label for="peso" class="sr-only">Peso* </label>
           <input
             type="number"
             name="peso"
             id="peso"
-            placeholder="Peso:kg"
+            placeholder="Peso*:kg"
             required
             class="card__input"
             data-tipo="peso"
+            aria-label="Peso"
           />
         </div>
 
         <div class="card__input-group">
-          <label for="altura" class="sr-only">Altura </label>
+          <label for="altura" class="sr-only">Altura* </label>
           <input
             type="number"
             name="altura"
             id="altura"
-            placeholder="Altura:m"
+            placeholder="Altura*:m"
             required
             class="card__input"
             data-tipo="altura"
+            aria-label="Altura"
           />
         </div>
 
-        <button class="card__calcular" data-tipo="botao" type="submit">
+        <button class="card__calcular" data-tipo="botao-calcular" type="submit">
           Calcular
         </button>
       </section>
@@ -96,6 +98,26 @@
             data-tipo="resultado"
           />
         </div>
+
+        <div class="result__reset-container">
+          <button
+            type="reset"
+            class="result__reset"
+            data-tipo="botao-reset"
+            disabled
+          >
+            Limpar
+          </button>
+        </div>
+
+        <p class="result__source">
+          Fonte:
+          <a
+            href="http://tabnet.datasus.gov.br/cgi-win/SISVAN/CNV/notas_sisvan.html"
+            target="_blank"
+            >tabnet.datasus</a
+          >
+        </p>
       </section>
     </main>
 
@@ -106,7 +128,7 @@
           <a href="https://github.com/jonsmartins52" target="_blank">
             <img
               class="icons-list__img"
-              src="./assets/img/iconfinder_Github_social_media_logo_1964417.png"
+              src="./assets/img/github-icon.jpg"
               alt="Github"
             />
           </a>
