@@ -1,3 +1,5 @@
+import { compareImc } from "./imc.js";
+
 class View {
   constructor() {
     this.inputPeso = document.querySelector("[data-tipo='peso']");
@@ -6,14 +8,15 @@ class View {
     this.btnReset = document.querySelector("[data-tipo='botao-reset']");
     this.outputResp = document.querySelector("[data-tipo='resultado']");
     this.outputSpan = document.createElement("span");
+    this.outputSpan.classList.add("result__message");
   }
 
   getPeso() {
     const peso = this.inputPeso.value;
 
     if (!peso) {
-      this.inputPeso.classList.remove("card__input");
       this.inputPeso.classList.add("card__input--invalido");
+      this.inputPeso.style.setProperty("--green", "--red");
     }
 
     return Number(peso);
@@ -23,8 +26,8 @@ class View {
     const altura = this.inputAltura.value;
 
     if (!altura) {
-      this.inputAltura.classList.remove("card__input");
       this.inputAltura.classList.add("card__input--invalido");
+      this.inputAltura.style.setProperty("--green", "--red");
     }
 
     return Number(altura);
@@ -54,46 +57,33 @@ class View {
   }
 
   classifyResult(imc) {
-    if (imc < 18.5) {
-      this.outputSpan.classList.add("result__message--underweight");
-      this.outputSpan.innerHTML = "Abaixo do peso.";
-      this.outputResp.parentElement.appendChild(this.outputSpan);
-      return;
-    }
-
-    if (imc < 25) {
-      this.outputSpan.classList.add("result__message--normal");
-      this.outputSpan.innerHTML = "Peso normal";
-      this.outputResp.parentElement.appendChild(this.outputSpan);
-      return;
-    }
-
-    if (imc < 30) {
-      this.outputSpan.classList.add("result__message--overweight");
-      this.outputSpan.innerHTML = "Acima do peso.";
-      this.outputResp.parentElement.appendChild(this.outputSpan);
-      return;
-    }
-
-    if (imc >= 30) {
-      this.outputSpan.classList.add("result__message--obesity");
-      this.outputSpan.innerHTML = "Obesidade.";
-      this.outputResp.parentElement.appendChild(this.outputSpan);
-      return;
-    }
+    compareImc(imc, this.outputSpan, this.outputResp);
   }
 
   clearResult() {
     this.outputResp.value = "";
     this.outputSpan.innerHTML = "";
+    const modClass = this.getClass();
+    this.outputSpan.classList.remove(modClass);
     this.disableButton();
   }
 
   switchClasses() {
     this.inputAltura.classList.remove("card__input--invalido");
-    this.inputAltura.classList.add("card__input");
+    this.inputAltura.style.removeProperty("--green");
     this.inputPeso.classList.remove("card__input--invalido");
-    this.inputPeso.classList.add("card__input");
+    this.inputPeso.style.removeProperty("--green");
+  }
+
+  getClass() {
+    const re = /[--]/;
+    const cssClasses = this.outputSpan.classList;
+    const [modClass] = Array.from(cssClasses).filter((cssClass) =>
+      cssClass.match(re)
+    );
+
+    //console.log(modClass);
+    return modClass;
   }
 
   onCalcClick(command) {

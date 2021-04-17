@@ -33,31 +33,26 @@
   outline: double var(--light-green);
 }
 
-.result__message--underweight {
+.result__message {
   font-size: 1.2rem;
   font-weight: 600;
   margin-top: 1.2rem;
+}
+
+.result__message--underweight {
+  color: var(--dark-blue);
 }
 
 .result__message--normal {
   color: var(--green);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1.2rem;
 }
 
 .result__message--overweight {
   color: var(--yellow);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1.2rem;
 }
 
 .result__message--obesity {
   color: var(--red);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1.2rem;
 }
 
 .result__reset-container {
@@ -129,22 +124,6 @@
 @media (min-width: 720px) {
   .result__output {
     width: 30%;
-  }
-
-  .result__message--underweight {
-    font-size: 0.9rem;
-  }
-
-  .result__message--normal {
-    font-size: 0.9rem;
-  }
-
-  .result__message--overweight {
-    font-size: 0.9rem;
-  }
-
-  .result__message--obesity {
-    font-size: 0.9rem;
   }
 
   .result__source {
